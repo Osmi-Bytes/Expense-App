@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- App Logo -->
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="App Logo" />
+
+    <!-- Total Expense Display -->
+    <TextView
+        android:id="@+id/totalExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: 0"
+        android:textSize="20sp"
+        android:layout_below="@id/appLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold" />
+
+    <!-- RecyclerView for Expenses List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expenseRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/totalExpense"
+        android:layout_above="@id/addExpenseButton"
+        android:layout_marginTop="16dp"
+        android:padding="8dp" />
+
+    <!-- Floating Action Button to Add Expenses -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addExpenseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Add Expense"
+        app:backgroundTint="@color/purple_500" />
+
+</RelativeLayout>
