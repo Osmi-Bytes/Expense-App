@@ -10,6 +10,8 @@ class ExpenseRepository(private val expenseDao: ExpenseDao) {
     // The Flow is used so that the ViewModel gets notified of any data changes.
     val allExpenses: Flow<List<Expense>> = expenseDao.getAllExpenses()
 
+    val expensesByCategory: Flow<List<CategoryExpense>> = expenseDao.getExpensesByCategory()
+
     // These functions provide a clean API for the ViewModel to use.
     // The 'suspend' modifier tells the compiler that this needs to be called from a coroutine.
     suspend fun insert(expense: Expense) {

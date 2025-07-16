@@ -47,6 +47,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.fragment:fragment-ktx:1.8.1")
 
     // Direct dependencies
     implementation("androidx.recyclerview:recyclerview:1.2.1")
@@ -66,4 +67,9 @@ dependencies {
     val lifecycle_version = "2.8.3"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version") // ViewModel with coroutine scope
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version") // LiveData
+
+    // Android Navigation Component
+    val nav_version = "2.7.7"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 }

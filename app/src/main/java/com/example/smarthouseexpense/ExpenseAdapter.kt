@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.Date
 import java.util.Locale
 
-class ExpenseAdapter(private val onDeleteClick: (Expense) -> Unit) :
+class ExpenseAdapter(private val currencySymbol: String, private val onDeleteClick: (Expense) -> Unit) :
     ListAdapter<Expense, ExpenseAdapter.ExpenseViewHolder>(ExpensesComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
@@ -22,7 +22,8 @@ class ExpenseAdapter(private val onDeleteClick: (Expense) -> Unit) :
 
     override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current, onDeleteClick)
+        holder.bind(current, currencySymbol, onDeleteClick)
+        //holder.bind(current, onDeleteClick)
     }
 
     class ExpenseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -32,9 +33,11 @@ class ExpenseAdapter(private val onDeleteClick: (Expense) -> Unit) :
         private val categoryText: TextView = itemView.findViewById(R.id.expenseCategory)
         private val deleteIcon: ImageView = itemView.findViewById(R.id.deleteExpenseIcon)
 
-        fun bind(expense: Expense, onDeleteClick: (Expense) -> Unit) {
-            amountText.text = String.format("$%.2f", expense.amount)
+        fun bind(expense: Expense, currencySymbol: String, onDeleteClick: (Expense) -> Unit) {
+            // Format amount with the provided symbol
+            amountText.text = String.format("%s%,.2f", currencySymbol, expense.amount)
             descriptionText.text = expense.description
+
             dateText.text = formatDate(expense.date)
             categoryText.text = expense.category
 

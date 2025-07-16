@@ -13,6 +13,8 @@ class ExpenseViewModel(private val repository: ExpenseRepository) : ViewModel() 
     // This will survive configuration changes and automatically update the UI.
     val allExpenses: LiveData<List<Expense>> = repository.allExpenses.asLiveData()
 
+    val expensesByCategory: LiveData<List<CategoryExpense>> = repository.expensesByCategory.asLiveData()
+
     // Launch a new coroutine to insert an expense in a non-blocking way.
     fun insert(expense: Expense) = viewModelScope.launch {
         repository.insert(expense)

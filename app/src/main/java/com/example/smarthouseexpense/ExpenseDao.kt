@@ -31,4 +31,7 @@ interface ExpenseDao {
     // Get a single expense by its ID.
     @Query("SELECT * FROM expenses_table WHERE id = :id")
     fun getExpenseById(id: Int): Flow<Expense>
+
+    @Query("SELECT category, SUM(amount) as totalAmount FROM expenses_table GROUP BY category")
+    fun getExpensesByCategory(): Flow<List<CategoryExpense>>
 }
