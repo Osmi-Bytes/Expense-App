@@ -8,12 +8,14 @@
 
 ## 📸 Screenshots
 
-# Dashboard 
-<img width="720" height="1475" alt="Dashboard" src="https://github.com/user-attachments/assets/adc44bc2-709a-4fcb-8ad3-ac0f915c70cc" />
-# Expense List 
-<img width="720" height="1458" alt="Expense List" src="https://github.com/user-attachments/assets/c6ff8d58-c6b7-4114-af86-70539bc5b8d3" />
-# Add Expense Dialog
-<img width="720" height="1459" alt="Add Expense Dialog" src="https://github.com/user-attachments/assets/0f4623dd-3636-4729-b1c4-557344908b69" />
+### 🧭 Dashboard
+<img src="https://github.com/user-attachments/assets/adc44bc2-709a-4fcb-8ad3-ac0f915c70cc" alt="Dashboard" width="400"/>
+
+### 📋 Expense List
+<img src="https://github.com/user-attachments/assets/c6ff8d58-c6b7-4114-af86-70539bc5b8d3" alt="Expense List" width="400"/>
+
+### ➕ Add Expense Dialog
+<img src="https://github.com/user-attachments/assets/0f4623dd-3636-4729-b1c4-557344908b69" alt="Add Expense Dialog" width="400"/>
 
 
 ---
