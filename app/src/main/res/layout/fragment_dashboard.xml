@@ -12,12 +12,13 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/logo2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/app_name" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Settings Icon -->
     <ImageView
         android:id="@+id/settings_icon"
         android:layout_width="32dp"
@@ -25,34 +26,61 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Settings"
         android:src="@drawable/ic_settings"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Settings" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Month Selector Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/month_selector_button"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Current Month"
+        app:icon="@drawable/ic_calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_logo" />
 
     <TextView
         android:id="@+id/dashboard_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Spending by Category"
-        android:textAppearance="?attr/textAppearanceHeadline5"
-        app:layout_constraintTop_toBottomOf="@id/dashboard_logo"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/month_selector_button" />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChart"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintTop_toBottomOf="@id/dashboard_title"
         app:layout_constraintBottom_toTopOf="@id/footer_text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/dashboard_title" />
 
-    <!-- "App by" Footer -->
+    <!-- Empty Chart TextView -->
+    <TextView
+        android:id="@+id/empty_chart_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No expenses for this month."
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/pieChart"
+        app:layout_constraintBottom_toBottomOf="@id/pieChart"
+        app:layout_constraintStart_toStartOf="@id/pieChart"
+        app:layout_constraintEnd_toEndOf="@id/pieChart"
+        tools:visibility="visible"/>
+
+    <!-- Footer Text -->
     <TextView
         android:id="@+id/footer_text"
         android:layout_width="wrap_content"
@@ -61,10 +89,10 @@
         android:text="Created with ❤️ by OsmiBytes"
         android:textAppearance="?attr/textAppearanceCaption"
         app:layout_constraintBottom_toTopOf="@id/copyright_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Copyright Footer -->
+    <!-- Copyright Text -->
     <TextView
         android:id="@+id/copyright_text"
         android:layout_width="wrap_content"
@@ -74,7 +102,7 @@
         android:textAppearance="?attr/textAppearanceCaption"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
